@@ -1,9 +1,9 @@
 {
-    "c865c148-68b2-4e0a-ab78-fc12e9500fab": {
-        "account_id": "c865c148-68b2-4e0a-ab78-fc12e9500fab",
-        "user_id": "bfba6d26-1565-4bc1-9425-3ac4ef9871a9",
+    "cb09abce-3729-4134-b2e2-fd9dcc0919bc": {
+        "account_id": "cb09abce-3729-4134-b2e2-fd9dcc0919bc",
+        "user_id": "522e3083-b1db-4ba1-8a3d-6c15e8de1a0d",
         "balance": 0.0,
-        "created_at": "2025-11-25T15:01:26.918520",
+        "created_at": "2025-11-25T15:20:28.925695",
         "is_active": true,
         "account_type": "SAVINGS"
     }

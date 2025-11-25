@@ -1,9 +1,9 @@
 {
-    "baac315f-a13e-4af1-b0b0-8b8703cd065a": {
-        "account_id": "baac315f-a13e-4af1-b0b0-8b8703cd065a",
-        "user_id": "49f005e5-3bee-411f-aa2e-c684222a8c33",
+    "ce63de10-2309-4680-b39f-c00619f5ebba": {
+        "account_id": "ce63de10-2309-4680-b39f-c00619f5ebba",
+        "user_id": "2489a720-ca92-4c6d-a1d9-e2055c93b45e",
         "balance": 5000.0,
-        "created_at": "2025-11-25T15:01:27.200819",
+        "created_at": "2025-11-25T15:20:29.216715",
         "is_active": true,
         "account_type": "SAVINGS"
     }

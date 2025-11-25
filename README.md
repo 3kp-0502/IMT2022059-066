@@ -33,6 +33,13 @@ We employed a **Mutation-Driven Testing** strategy. Detailed analysis of operato
 4.  **Integration Robustness**: Added `tests/test_integration_robustness.py` to verify Service-Persistence interactions (IPR/IVR).
 5.  **Result**: Achieved high mutation score by verifying internal state and default parameter handling.
 
+### Execution Screenshots
+**Passing Test Suite**
+![Passing Tests](pytest_passed.png)
+
+**Mutation Testing Results**
+![Mutmut Results](mutmut_results.png)
+
 ## Setup and Usage
 1.  Install dependencies:
     ```bash

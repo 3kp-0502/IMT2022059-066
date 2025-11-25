@@ -1,14 +1,14 @@
 {
-    "bfba6d26-1565-4bc1-9425-3ac4ef9871a9": {
-        "user_id": "bfba6d26-1565-4bc1-9425-3ac4ef9871a9",
+    "522e3083-b1db-4ba1-8a3d-6c15e8de1a0d": {
+        "user_id": "522e3083-b1db-4ba1-8a3d-6c15e8de1a0d",
         "username": "mutant_killer_700",
         "password_hash": "d3dec3f35387156495cbc21471313f87155f878f3435b693f50077c2be479033",
         "email": "m700@test.com",
         "phone": "1234567890",
         "is_admin": false,
-        "created_at": "2025-11-25T15:01:26.917879",
+        "created_at": "2025-11-25T15:20:28.924893",
         "accounts": [
-            "c865c148-68b2-4e0a-ab78-fc12e9500fab"
+            "cb09abce-3729-4134-b2e2-fd9dcc0919bc"
         ]
     }
 }
