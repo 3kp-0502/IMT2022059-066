@@ -1,0 +1,197 @@
+<html><body><h1>src/services/audit_service.py</h1>Killed 5 out of 23 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1118</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -7,7 +7,7 @@
+     Service to log all system actions for compliance and auditing purposes.
+     This is distinct from the transaction ledger; it tracks WHO did WHAT and WHEN.
+     """
+-    def __init__(self, log_file: str = "data/audit.log"):
++    def __init__(self, log_file: str = "XXdata/audit.logXX"):
+         self.log_file = log_file
+         self._ensure_log_dir()
+ 
+</pre><h3>Mutant 1120</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -12,7 +12,7 @@
+         self._ensure_log_dir()
+ 
+     def _ensure_log_dir(self):
+-        directory = os.path.dirname(self.log_file)
++        directory = None
+         if directory and not os.path.exists(directory):
+             os.makedirs(directory)
+ 
+</pre><h3>Mutant 1123</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -16,7 +16,7 @@
+         if directory and not os.path.exists(directory):
+             os.makedirs(directory)
+ 
+-    def log_action(self, user_id: str, action: str, details: str, status: str = "SUCCESS"):
++    def log_action(self, user_id: str, action: str, details: str, status: str = "XXSUCCESSXX"):
+         """
+         Logs a specific action taken by a user.
+         """
+</pre><h3>Mutant 1124</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -20,7 +20,7 @@
+         """
+         Logs a specific action taken by a user.
+         """
+-        timestamp = datetime.datetime.now().isoformat()
++        timestamp = None
+         log_entry = f"[{timestamp}] USER:{user_id} ACTION:{action} STATUS:{status} DETAILS:{details}\n"
+         
+         with open(self.log_file, "a") as f:
+</pre><h3>Mutant 1125</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -21,7 +21,7 @@
+         Logs a specific action taken by a user.
+         """
+         timestamp = datetime.datetime.now().isoformat()
+-        log_entry = f"[{timestamp}] USER:{user_id} ACTION:{action} STATUS:{status} DETAILS:{details}\n"
++        log_entry = f"XX[{timestamp}] USER:{user_id} ACTION:{action} STATUS:{status} DETAILS:{details}\nXX"
+         
+         with open(self.log_file, "a") as f:
+             f.write(log_entry)
+</pre><h3>Mutant 1128</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -26,7 +26,7 @@
+         with open(self.log_file, "a") as f:
+             f.write(log_entry)
+ 
+-    def log_system_event(self, event: str, severity: str = "INFO"):
++    def log_system_event(self, event: str, severity: str = "XXINFOXX"):
+         """
+         Logs a system-level event (e.g., startup, shutdown, errors).
+         """
+</pre><h3>Mutant 1129</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -30,7 +30,7 @@
+         """
+         Logs a system-level event (e.g., startup, shutdown, errors).
+         """
+-        timestamp = datetime.datetime.now().isoformat()
++        timestamp = None
+         log_entry = f"[{timestamp}] SYSTEM EVENT:{event} SEVERITY:{severity}\n"
+         
+         with open(self.log_file, "a") as f:
+</pre><h3>Mutant 1130</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -31,7 +31,7 @@
+         Logs a system-level event (e.g., startup, shutdown, errors).
+         """
+         timestamp = datetime.datetime.now().isoformat()
+-        log_entry = f"[{timestamp}] SYSTEM EVENT:{event} SEVERITY:{severity}\n"
++        log_entry = f"XX[{timestamp}] SYSTEM EVENT:{event} SEVERITY:{severity}\nXX"
+         
+         with open(self.log_file, "a") as f:
+             f.write(log_entry)
+</pre><h3>Mutant 1131</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -31,7 +31,7 @@
+         Logs a system-level event (e.g., startup, shutdown, errors).
+         """
+         timestamp = datetime.datetime.now().isoformat()
+-        log_entry = f"[{timestamp}] SYSTEM EVENT:{event} SEVERITY:{severity}\n"
++        log_entry = None
+         
+         with open(self.log_file, "a") as f:
+             f.write(log_entry)
+</pre><h3>Mutant 1132</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -33,7 +33,7 @@
+         timestamp = datetime.datetime.now().isoformat()
+         log_entry = f"[{timestamp}] SYSTEM EVENT:{event} SEVERITY:{severity}\n"
+         
+-        with open(self.log_file, "a") as f:
++        with open(self.log_file, "XXaXX") as f:
+             f.write(log_entry)
+ 
+     def get_logs_for_user(self, user_id: str) -> list:
+</pre><h3>Mutant 1133</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -40,7 +40,7 @@
+         """
+         Retrieves all audit logs related to a specific user.
+         """
+-        user_logs = []
++        user_logs = None
+         if not os.path.exists(self.log_file):
+             return user_logs
+ 
+</pre><h3>Mutant 1134</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -41,7 +41,7 @@
+         Retrieves all audit logs related to a specific user.
+         """
+         user_logs = []
+-        if not os.path.exists(self.log_file):
++        if  os.path.exists(self.log_file):
+             return user_logs
+ 
+         with open(self.log_file, "r") as f:
+</pre><h3>Mutant 1135</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -44,7 +44,7 @@
+         if not os.path.exists(self.log_file):
+             return user_logs
+ 
+-        with open(self.log_file, "r") as f:
++        with open(self.log_file, "XXrXX") as f:
+             for line in f:
+                 if f"USER:{user_id}" in line:
+                     user_logs.append(line.strip())
+</pre><h3>Mutant 1136</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -46,7 +46,7 @@
+ 
+         with open(self.log_file, "r") as f:
+             for line in f:
+-                if f"USER:{user_id}" in line:
++                if f"XXUSER:{user_id}XX" in line:
+                     user_logs.append(line.strip())
+         return user_logs
+ 
+</pre><h3>Mutant 1137</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -46,7 +46,7 @@
+ 
+         with open(self.log_file, "r") as f:
+             for line in f:
+-                if f"USER:{user_id}" in line:
++                if f"USER:{user_id}" not in line:
+                     user_logs.append(line.strip())
+         return user_logs
+ 
+</pre><h3>Mutant 1138</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -54,7 +54,7 @@
+         """
+         Exports the current audit log to a specified file.
+         """
+-        if not os.path.exists(self.log_file):
++        if  os.path.exists(self.log_file):
+             return
+         
+         with open(self.log_file, "r") as src, open(filepath, "w") as dst:
+</pre><h3>Mutant 1139</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -57,6 +57,6 @@
+         if not os.path.exists(self.log_file):
+             return
+         
+-        with open(self.log_file, "r") as src, open(filepath, "w") as dst:
++        with open(self.log_file, "XXrXX") as src, open(filepath, "w") as dst:
+             dst.write(src.read())
+ 
+</pre><h3>Mutant 1140</h3><pre>--- src/services/audit_service.py
++++ src/services/audit_service.py
+@@ -57,6 +57,6 @@
+         if not os.path.exists(self.log_file):
+             return
+         
+-        with open(self.log_file, "r") as src, open(filepath, "w") as dst:
++        with open(self.log_file, "r") as src, open(filepath, "XXwXX") as dst:
+             dst.write(src.read())
+ 
+</pre></body></html>

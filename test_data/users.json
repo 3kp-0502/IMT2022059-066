@@ -1,0 +1,14 @@
+{
+    "2fe4ad9c-5ae1-4090-bb2c-aa2cd8f17808": {
+        "user_id": "2fe4ad9c-5ae1-4090-bb2c-aa2cd8f17808",
+        "username": "user5",
+        "password_hash": "008c70392e3abfbd0fa47bbc2ed96aa99bd49e159727fcba0f2e6abeb3a9d601",
+        "email": "u5@test.com",
+        "phone": "1234567890",
+        "is_admin": false,
+        "created_at": "2025-11-24T21:42:33.593894",
+        "accounts": [
+            "5ac5d6e7-422e-445d-b002-de37538a04aa"
+        ]
+    }
+}

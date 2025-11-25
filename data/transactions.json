@@ -1,0 +1,29 @@
+[
+    {
+        "transaction_id": "853b7696-74e0-4f19-a3d4-dc112d418a74",
+        "account_id": "d4b29b46-e1d9-41a0-907f-336d954e93d9",
+        "amount": 5000.0,
+        "transaction_type": "DEPOSIT",
+        "timestamp": "2025-11-23T17:14:27.071951",
+        "description": "Initial Deposit",
+        "related_account_id": null
+    },
+    {
+        "transaction_id": "48d8bfa1-9923-4a8b-8cfd-9d7a330716b9",
+        "account_id": "d4b29b46-e1d9-41a0-907f-336d954e93d9",
+        "amount": 4000.0,
+        "transaction_type": "WITHDRAWAL",
+        "timestamp": "2025-11-23T17:15:53.554677",
+        "description": "Withdrawal",
+        "related_account_id": null
+    },
+    {
+        "transaction_id": "6abbbd18-9cc8-4b03-9aea-98c4ded9e2c2",
+        "account_id": "4fd40b40-f2cf-4c6b-a2f7-f450b2e13350",
+        "amount": 10.0,
+        "transaction_type": "DEPOSIT",
+        "timestamp": "2025-11-24T21:31:39.918825",
+        "description": "Initial Deposit",
+        "related_account_id": null
+    }
+]

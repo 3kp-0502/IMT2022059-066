@@ -1,0 +1,1343 @@
+<html><body><h1>src/main.py</h1>Killed 0 out of 194 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- src/main.py
++++ src/main.py
+@@ -15,7 +15,7 @@
+ from src.utils.validators import ValidationError
+ 
+ class BankingCLI(cmd.Cmd):
+-    intro = 'Welcome to the Secure Banking System. Type help or ? to list commands.\n'
++    intro = 'XXWelcome to the Secure Banking System. Type help or ? to list commands.\nXX'
+     prompt = '(banking) '
+ 
+     def __init__(self):
+</pre><h3>Mutant 2</h3><pre>--- src/main.py
++++ src/main.py
+@@ -15,7 +15,7 @@
+ from src.utils.validators import ValidationError
+ 
+ class BankingCLI(cmd.Cmd):
+-    intro = 'Welcome to the Secure Banking System. Type help or ? to list commands.\n'
++    intro = None
+     prompt = '(banking) '
+ 
+     def __init__(self):
+</pre><h3>Mutant 3</h3><pre>--- src/main.py
++++ src/main.py
+@@ -16,7 +16,7 @@
+ 
+ class BankingCLI(cmd.Cmd):
+     intro = 'Welcome to the Secure Banking System. Type help or ? to list commands.\n'
+-    prompt = '(banking) '
++    prompt = 'XX(banking) XX'
+ 
+     def __init__(self):
+         super().__init__()
+</pre><h3>Mutant 4</h3><pre>--- src/main.py
++++ src/main.py
+@@ -16,7 +16,7 @@
+ 
+ class BankingCLI(cmd.Cmd):
+     intro = 'Welcome to the Secure Banking System. Type help or ? to list commands.\n'
+-    prompt = '(banking) '
++    prompt = None
+ 
+     def __init__(self):
+         super().__init__()
+</pre><h3>Mutant 5</h3><pre>--- src/main.py
++++ src/main.py
+@@ -20,7 +20,7 @@
+ 
+     def __init__(self):
+         super().__init__()
+-        self.persistence = PersistenceLayer()
++        self.persistence = None
+         self.auth_service = AuthService(self.persistence)
+         self.bank_service = BankService(self.persistence)
+         self.report_service = ReportService(self.persistence)
+</pre><h3>Mutant 6</h3><pre>--- src/main.py
++++ src/main.py
+@@ -21,7 +21,7 @@
+     def __init__(self):
+         super().__init__()
+         self.persistence = PersistenceLayer()
+-        self.auth_service = AuthService(self.persistence)
++        self.auth_service = None
+         self.bank_service = BankService(self.persistence)
+         self.report_service = ReportService(self.persistence)
+         self.loan_service = LoanService(self.persistence)
+</pre><h3>Mutant 7</h3><pre>--- src/main.py
++++ src/main.py
+@@ -22,7 +22,7 @@
+         super().__init__()
+         self.persistence = PersistenceLayer()
+         self.auth_service = AuthService(self.persistence)
+-        self.bank_service = BankService(self.persistence)
++        self.bank_service = None
+         self.report_service = ReportService(self.persistence)
+         self.loan_service = LoanService(self.persistence)
+         self.fraud_service = FraudDetectionService(self.persistence)
+</pre><h3>Mutant 8</h3><pre>--- src/main.py
++++ src/main.py
+@@ -23,7 +23,7 @@
+         self.persistence = PersistenceLayer()
+         self.auth_service = AuthService(self.persistence)
+         self.bank_service = BankService(self.persistence)
+-        self.report_service = ReportService(self.persistence)
++        self.report_service = None
+         self.loan_service = LoanService(self.persistence)
+         self.fraud_service = FraudDetectionService(self.persistence)
+ 
+</pre><h3>Mutant 9</h3><pre>--- src/main.py
++++ src/main.py
+@@ -24,7 +24,7 @@
+         self.auth_service = AuthService(self.persistence)
+         self.bank_service = BankService(self.persistence)
+         self.report_service = ReportService(self.persistence)
+-        self.loan_service = LoanService(self.persistence)
++        self.loan_service = None
+         self.fraud_service = FraudDetectionService(self.persistence)
+ 
+     def do_register(self, arg):
+</pre><h3>Mutant 10</h3><pre>--- src/main.py
++++ src/main.py
+@@ -25,7 +25,7 @@
+         self.bank_service = BankService(self.persistence)
+         self.report_service = ReportService(self.persistence)
+         self.loan_service = LoanService(self.persistence)
+-        self.fraud_service = FraudDetectionService(self.persistence)
++        self.fraud_service = None
+ 
+     def do_register(self, arg):
+         """Register a new user: register <username> <email> <phone>"""
+</pre><h3>Mutant 11</h3><pre>--- src/main.py
++++ src/main.py
+@@ -29,7 +29,7 @@
+ 
+     def do_register(self, arg):
+         """Register a new user: register <username> <email> <phone>"""
+-        args = arg.split()
++        args = None
+         if len(args) != 3:
+             print("Usage: register <username> <email> <phone>")
+             return
+</pre><h3>Mutant 12</h3><pre>--- src/main.py
++++ src/main.py
+@@ -30,7 +30,7 @@
+     def do_register(self, arg):
+         """Register a new user: register <username> <email> <phone>"""
+         args = arg.split()
+-        if len(args) != 3:
++        if len(args) == 3:
+             print("Usage: register <username> <email> <phone>")
+             return
+         
+</pre><h3>Mutant 13</h3><pre>--- src/main.py
++++ src/main.py
+@@ -30,7 +30,7 @@
+     def do_register(self, arg):
+         """Register a new user: register <username> <email> <phone>"""
+         args = arg.split()
+-        if len(args) != 3:
++        if len(args) != 4:
+             print("Usage: register <username> <email> <phone>")
+             return
+         
+</pre><h3>Mutant 14</h3><pre>--- src/main.py
++++ src/main.py
+@@ -31,7 +31,7 @@
+         """Register a new user: register <username> <email> <phone>"""
+         args = arg.split()
+         if len(args) != 3:
+-            print("Usage: register <username> <email> <phone>")
++            print("XXUsage: register <username> <email> <phone>XX")
+             return
+         
+         username, email, phone = args
+</pre><h3>Mutant 15</h3><pre>--- src/main.py
++++ src/main.py
+@@ -34,7 +34,7 @@
+             print("Usage: register <username> <email> <phone>")
+             return
+         
+-        username, email, phone = args
++        username, email, phone = None
+         password = getpass("Enter password: ")
+         confirm_password = getpass("Confirm password: ")
+ 
+</pre><h3>Mutant 16</h3><pre>--- src/main.py
++++ src/main.py
+@@ -35,7 +35,7 @@
+             return
+         
+         username, email, phone = args
+-        password = getpass("Enter password: ")
++        password = getpass("XXEnter password: XX")
+         confirm_password = getpass("Confirm password: ")
+ 
+         if password != confirm_password:
+</pre><h3>Mutant 17</h3><pre>--- src/main.py
++++ src/main.py
+@@ -35,7 +35,7 @@
+             return
+         
+         username, email, phone = args
+-        password = getpass("Enter password: ")
++        password = None
+         confirm_password = getpass("Confirm password: ")
+ 
+         if password != confirm_password:
+</pre><h3>Mutant 18</h3><pre>--- src/main.py
++++ src/main.py
+@@ -36,7 +36,7 @@
+         
+         username, email, phone = args
+         password = getpass("Enter password: ")
+-        confirm_password = getpass("Confirm password: ")
++        confirm_password = getpass("XXConfirm password: XX")
+ 
+         if password != confirm_password:
+             print("Passwords do not match.")
+</pre><h3>Mutant 19</h3><pre>--- src/main.py
++++ src/main.py
+@@ -36,7 +36,7 @@
+         
+         username, email, phone = args
+         password = getpass("Enter password: ")
+-        confirm_password = getpass("Confirm password: ")
++        confirm_password = None
+ 
+         if password != confirm_password:
+             print("Passwords do not match.")
+</pre><h3>Mutant 20</h3><pre>--- src/main.py
++++ src/main.py
+@@ -38,7 +38,7 @@
+         password = getpass("Enter password: ")
+         confirm_password = getpass("Confirm password: ")
+ 
+-        if password != confirm_password:
++        if password == confirm_password:
+             print("Passwords do not match.")
+             return
+ 
+</pre><h3>Mutant 21</h3><pre>--- src/main.py
++++ src/main.py
+@@ -39,7 +39,7 @@
+         confirm_password = getpass("Confirm password: ")
+ 
+         if password != confirm_password:
+-            print("Passwords do not match.")
++            print("XXPasswords do not match.XX")
+             return
+ 
+         try:
+</pre><h3>Mutant 22</h3><pre>--- src/main.py
++++ src/main.py
+@@ -43,7 +43,7 @@
+             return
+ 
+         try:
+-            user = self.auth_service.register(username, password, email, phone)
++            user = None
+             print(f"User {user.username} registered successfully!")
+         except ValidationError as e:
+             print(f"Error: {e}")
+</pre><h3>Mutant 23</h3><pre>--- src/main.py
++++ src/main.py
+@@ -44,7 +44,7 @@
+ 
+         try:
+             user = self.auth_service.register(username, password, email, phone)
+-            print(f"User {user.username} registered successfully!")
++            print(f"XXUser {user.username} registered successfully!XX")
+         except ValidationError as e:
+             print(f"Error: {e}")
+ 
+</pre><h3>Mutant 24</h3><pre>--- src/main.py
++++ src/main.py
+@@ -46,7 +46,7 @@
+             user = self.auth_service.register(username, password, email, phone)
+             print(f"User {user.username} registered successfully!")
+         except ValidationError as e:
+-            print(f"Error: {e}")
++            print(f"XXError: {e}XX")
+ 
+     def do_login(self, arg):
+         """Login to the system: login <username>"""
+</pre><h3>Mutant 25</h3><pre>--- src/main.py
++++ src/main.py
+@@ -50,7 +50,7 @@
+ 
+     def do_login(self, arg):
+         """Login to the system: login <username>"""
+-        if not arg:
++        if  arg:
+             print("Usage: login <username>")
+             return
+         
+</pre><h3>Mutant 26</h3><pre>--- src/main.py
++++ src/main.py
+@@ -51,7 +51,7 @@
+     def do_login(self, arg):
+         """Login to the system: login <username>"""
+         if not arg:
+-            print("Usage: login <username>")
++            print("XXUsage: login <username>XX")
+             return
+         
+         username = arg
+</pre><h3>Mutant 27</h3><pre>--- src/main.py
++++ src/main.py
+@@ -54,7 +54,7 @@
+             print("Usage: login <username>")
+             return
+         
+-        username = arg
++        username = None
+         password = getpass("Enter password: ")
+ 
+         try:
+</pre><h3>Mutant 28</h3><pre>--- src/main.py
++++ src/main.py
+@@ -55,7 +55,7 @@
+             return
+         
+         username = arg
+-        password = getpass("Enter password: ")
++        password = getpass("XXEnter password: XX")
+ 
+         try:
+             user = self.auth_service.login(username, password)
+</pre><h3>Mutant 29</h3><pre>--- src/main.py
++++ src/main.py
+@@ -55,7 +55,7 @@
+             return
+         
+         username = arg
+-        password = getpass("Enter password: ")
++        password = None
+ 
+         try:
+             user = self.auth_service.login(username, password)
+</pre><h3>Mutant 30</h3><pre>--- src/main.py
++++ src/main.py
+@@ -58,7 +58,7 @@
+         password = getpass("Enter password: ")
+ 
+         try:
+-            user = self.auth_service.login(username, password)
++            user = None
+             print(f"Welcome back, {user.username}!")
+             self.prompt = f'({user.username}) '
+         except ValidationError as e:
+</pre><h3>Mutant 31</h3><pre>--- src/main.py
++++ src/main.py
+@@ -59,7 +59,7 @@
+ 
+         try:
+             user = self.auth_service.login(username, password)
+-            print(f"Welcome back, {user.username}!")
++            print(f"XXWelcome back, {user.username}!XX")
+             self.prompt = f'({user.username}) '
+         except ValidationError as e:
+             print(f"Error: {e}")
+</pre><h3>Mutant 32</h3><pre>--- src/main.py
++++ src/main.py
+@@ -60,7 +60,7 @@
+         try:
+             user = self.auth_service.login(username, password)
+             print(f"Welcome back, {user.username}!")
+-            self.prompt = f'({user.username}) '
++            self.prompt = f'XX({user.username}) XX'
+         except ValidationError as e:
+             print(f"Error: {e}")
+ 
+</pre><h3>Mutant 33</h3><pre>--- src/main.py
++++ src/main.py
+@@ -60,7 +60,7 @@
+         try:
+             user = self.auth_service.login(username, password)
+             print(f"Welcome back, {user.username}!")
+-            self.prompt = f'({user.username}) '
++            self.prompt = None
+         except ValidationError as e:
+             print(f"Error: {e}")
+ 
+</pre><h3>Mutant 34</h3><pre>--- src/main.py
++++ src/main.py
+@@ -62,7 +62,7 @@
+             print(f"Welcome back, {user.username}!")
+             self.prompt = f'({user.username}) '
+         except ValidationError as e:
+-            print(f"Error: {e}")
++            print(f"XXError: {e}XX")
+ 
+     def do_logout(self, arg):
+         """Logout from the current session."""
+</pre><h3>Mutant 35</h3><pre>--- src/main.py
++++ src/main.py
+@@ -68,7 +68,7 @@
+         """Logout from the current session."""
+         if self.auth_service.is_authenticated():
+             self.auth_service.logout()
+-            print("Logged out successfully.")
++            print("XXLogged out successfully.XX")
+             self.prompt = '(banking) '
+         else:
+             print("You are not logged in.")
+</pre><h3>Mutant 36</h3><pre>--- src/main.py
++++ src/main.py
+@@ -69,7 +69,7 @@
+         if self.auth_service.is_authenticated():
+             self.auth_service.logout()
+             print("Logged out successfully.")
+-            self.prompt = '(banking) '
++            self.prompt = 'XX(banking) XX'
+         else:
+             print("You are not logged in.")
+ 
+</pre><h3>Mutant 37</h3><pre>--- src/main.py
++++ src/main.py
+@@ -69,7 +69,7 @@
+         if self.auth_service.is_authenticated():
+             self.auth_service.logout()
+             print("Logged out successfully.")
+-            self.prompt = '(banking) '
++            self.prompt = None
+         else:
+             print("You are not logged in.")
+ 
+</pre><h3>Mutant 38</h3><pre>--- src/main.py
++++ src/main.py
+@@ -71,7 +71,7 @@
+             print("Logged out successfully.")
+             self.prompt = '(banking) '
+         else:
+-            print("You are not logged in.")
++            print("XXYou are not logged in.XX")
+ 
+     def do_create_account(self, arg):
+         """Create a new account: create_account <SAVINGS|CURRENT|FIXED_DEPOSIT> [initial_deposit]"""
+</pre><h3>Mutant 39</h3><pre>--- src/main.py
++++ src/main.py
+@@ -75,7 +75,7 @@
+ 
+     def do_create_account(self, arg):
+         """Create a new account: create_account <SAVINGS|CURRENT|FIXED_DEPOSIT> [initial_deposit]"""
+-        if not self.auth_service.is_authenticated():
++        if  self.auth_service.is_authenticated():
+             print("Please login first.")
+             return
+ 
+</pre><h3>Mutant 40</h3><pre>--- src/main.py
++++ src/main.py
+@@ -76,7 +76,7 @@
+     def do_create_account(self, arg):
+         """Create a new account: create_account <SAVINGS|CURRENT|FIXED_DEPOSIT> [initial_deposit]"""
+         if not self.auth_service.is_authenticated():
+-            print("Please login first.")
++            print("XXPlease login first.XX")
+             return
+ 
+         args = arg.split()
+</pre><h3>Mutant 41</h3><pre>--- src/main.py
++++ src/main.py
+@@ -79,7 +79,7 @@
+             print("Please login first.")
+             return
+ 
+-        args = arg.split()
++        args = None
+         if len(args) < 1:
+             print("Usage: create_account <type> [initial_deposit]")
+             return
+</pre><h3>Mutant 42</h3><pre>--- src/main.py
++++ src/main.py
+@@ -80,7 +80,7 @@
+             return
+ 
+         args = arg.split()
+-        if len(args) < 1:
++        if len(args) <= 1:
+             print("Usage: create_account <type> [initial_deposit]")
+             return
+ 
+</pre><h3>Mutant 43</h3><pre>--- src/main.py
++++ src/main.py
+@@ -80,7 +80,7 @@
+             return
+ 
+         args = arg.split()
+-        if len(args) < 1:
++        if len(args) < 2:
+             print("Usage: create_account <type> [initial_deposit]")
+             return
+ 
+</pre><h3>Mutant 44</h3><pre>--- src/main.py
++++ src/main.py
+@@ -81,7 +81,7 @@
+ 
+         args = arg.split()
+         if len(args) < 1:
+-            print("Usage: create_account <type> [initial_deposit]")
++            print("XXUsage: create_account <type> [initial_deposit]XX")
+             return
+ 
+         acc_type = args[0].upper()
+</pre><h3>Mutant 45</h3><pre>--- src/main.py
++++ src/main.py
+@@ -84,7 +84,7 @@
+             print("Usage: create_account <type> [initial_deposit]")
+             return
+ 
+-        acc_type = args[0].upper()
++        acc_type = args[1].upper()
+         initial_deposit = float(args[1]) if len(args) > 1 else 0.0
+ 
+         try:
+</pre><h3>Mutant 46</h3><pre>--- src/main.py
++++ src/main.py
+@@ -84,7 +84,7 @@
+             print("Usage: create_account <type> [initial_deposit]")
+             return
+ 
+-        acc_type = args[0].upper()
++        acc_type = None
+         initial_deposit = float(args[1]) if len(args) > 1 else 0.0
+ 
+         try:
+</pre><h3>Mutant 47</h3><pre>--- src/main.py
++++ src/main.py
+@@ -85,7 +85,7 @@
+             return
+ 
+         acc_type = args[0].upper()
+-        initial_deposit = float(args[1]) if len(args) > 1 else 0.0
++        initial_deposit = float(args[2]) if len(args) > 1 else 0.0
+ 
+         try:
+             account = self.bank_service.create_account(self.auth_service.current_user, acc_type, initial_deposit)
+</pre><h3>Mutant 48</h3><pre>--- src/main.py
++++ src/main.py
+@@ -85,7 +85,7 @@
+             return
+ 
+         acc_type = args[0].upper()
+-        initial_deposit = float(args[1]) if len(args) > 1 else 0.0
++        initial_deposit = float(args[1]) if len(args) >= 1 else 0.0
+ 
+         try:
+             account = self.bank_service.create_account(self.auth_service.current_user, acc_type, initial_deposit)
+</pre><h3>Mutant 49</h3><pre>--- src/main.py
++++ src/main.py
+@@ -85,7 +85,7 @@
+             return
+ 
+         acc_type = args[0].upper()
+-        initial_deposit = float(args[1]) if len(args) > 1 else 0.0
++        initial_deposit = float(args[1]) if len(args) > 2 else 0.0
+ 
+         try:
+             account = self.bank_service.create_account(self.auth_service.current_user, acc_type, initial_deposit)
+</pre><h3>Mutant 50</h3><pre>--- src/main.py
++++ src/main.py
+@@ -85,7 +85,7 @@
+             return
+ 
+         acc_type = args[0].upper()
+-        initial_deposit = float(args[1]) if len(args) > 1 else 0.0
++        initial_deposit = float(args[1]) if len(args) > 1 else 1.0
+ 
+         try:
+             account = self.bank_service.create_account(self.auth_service.current_user, acc_type, initial_deposit)
+</pre><h3>Mutant 51</h3><pre>--- src/main.py
++++ src/main.py
+@@ -85,7 +85,7 @@
+             return
+ 
+         acc_type = args[0].upper()
+-        initial_deposit = float(args[1]) if len(args) > 1 else 0.0
++        initial_deposit = None
+ 
+         try:
+             account = self.bank_service.create_account(self.auth_service.current_user, acc_type, initial_deposit)
+</pre><h3>Mutant 52</h3><pre>--- src/main.py
++++ src/main.py
+@@ -88,7 +88,7 @@
+         initial_deposit = float(args[1]) if len(args) > 1 else 0.0
+ 
+         try:
+-            account = self.bank_service.create_account(self.auth_service.current_user, acc_type, initial_deposit)
++            account = None
+             print(f"Account created successfully! ID: {account.account_id}")
+         except ValidationError as e:
+             print(f"Error: {e}")
+</pre><h3>Mutant 53</h3><pre>--- src/main.py
++++ src/main.py
+@@ -89,7 +89,7 @@
+ 
+         try:
+             account = self.bank_service.create_account(self.auth_service.current_user, acc_type, initial_deposit)
+-            print(f"Account created successfully! ID: {account.account_id}")
++            print(f"XXAccount created successfully! ID: {account.account_id}XX")
+         except ValidationError as e:
+             print(f"Error: {e}")
+         except ValueError:
+</pre><h3>Mutant 54</h3><pre>--- src/main.py
++++ src/main.py
+@@ -91,7 +91,7 @@
+             account = self.bank_service.create_account(self.auth_service.current_user, acc_type, initial_deposit)
+             print(f"Account created successfully! ID: {account.account_id}")
+         except ValidationError as e:
+-            print(f"Error: {e}")
++            print(f"XXError: {e}XX")
+         except ValueError:
+              print("Invalid amount.")
+ 
+</pre><h3>Mutant 55</h3><pre>--- src/main.py
++++ src/main.py
+@@ -93,7 +93,7 @@
+         except ValidationError as e:
+             print(f"Error: {e}")
+         except ValueError:
+-             print("Invalid amount.")
++             print("XXInvalid amount.XX")
+ 
+     def do_my_accounts(self, arg):
+         """List all your accounts."""
+</pre><h3>Mutant 56</h3><pre>--- src/main.py
++++ src/main.py
+@@ -97,7 +97,7 @@
+ 
+     def do_my_accounts(self, arg):
+         """List all your accounts."""
+-        if not self.auth_service.is_authenticated():
++        if  self.auth_service.is_authenticated():
+             print("Please login first.")
+             return
+ 
+</pre><h3>Mutant 57</h3><pre>--- src/main.py
++++ src/main.py
+@@ -98,7 +98,7 @@
+     def do_my_accounts(self, arg):
+         """List all your accounts."""
+         if not self.auth_service.is_authenticated():
+-            print("Please login first.")
++            print("XXPlease login first.XX")
+             return
+ 
+         accounts = self.bank_service.get_user_accounts(self.auth_service.current_user.user_id)
+</pre><h3>Mutant 58</h3><pre>--- src/main.py
++++ src/main.py
+@@ -101,7 +101,7 @@
+             print("Please login first.")
+             return
+ 
+-        accounts = self.bank_service.get_user_accounts(self.auth_service.current_user.user_id)
++        accounts = None
+         if not accounts:
+             print("No accounts found.")
+             return
+</pre><h3>Mutant 59</h3><pre>--- src/main.py
++++ src/main.py
+@@ -102,7 +102,7 @@
+             return
+ 
+         accounts = self.bank_service.get_user_accounts(self.auth_service.current_user.user_id)
+-        if not accounts:
++        if  accounts:
+             print("No accounts found.")
+             return
+ 
+</pre><h3>Mutant 60</h3><pre>--- src/main.py
++++ src/main.py
+@@ -103,7 +103,7 @@
+ 
+         accounts = self.bank_service.get_user_accounts(self.auth_service.current_user.user_id)
+         if not accounts:
+-            print("No accounts found.")
++            print("XXNo accounts found.XX")
+             return
+ 
+         print(f"{'Account ID':<38} | {'Type':<15} | {'Balance'}")
+</pre><h3>Mutant 61</h3><pre>--- src/main.py
++++ src/main.py
+@@ -106,7 +106,7 @@
+             print("No accounts found.")
+             return
+ 
+-        print(f"{'Account ID':<38} | {'Type':<15} | {'Balance'}")
++        print(f"{'XXAccount IDXX':<38} | {'Type':<15} | {'Balance'}")
+         print("-" * 65)
+         for acc in accounts:
+             print(f"{acc.account_id:<38} | {acc.account_type:<15} | ${acc.balance:.2f}")
+</pre><h3>Mutant 62</h3><pre>--- src/main.py
++++ src/main.py
+@@ -106,7 +106,7 @@
+             print("No accounts found.")
+             return
+ 
+-        print(f"{'Account ID':<38} | {'Type':<15} | {'Balance'}")
++        print(f"{'Account ID':<38} | {'XXTypeXX':<15} | {'Balance'}")
+         print("-" * 65)
+         for acc in accounts:
+             print(f"{acc.account_id:<38} | {acc.account_type:<15} | ${acc.balance:.2f}")
+</pre><h3>Mutant 63</h3><pre>--- src/main.py
++++ src/main.py
+@@ -106,7 +106,7 @@
+             print("No accounts found.")
+             return
+ 
+-        print(f"{'Account ID':<38} | {'Type':<15} | {'Balance'}")
++        print(f"{'Account ID':<38} | {'Type':<15} | {'XXBalanceXX'}")
+         print("-" * 65)
+         for acc in accounts:
+             print(f"{acc.account_id:<38} | {acc.account_type:<15} | ${acc.balance:.2f}")
+</pre><h3>Mutant 64</h3><pre>--- src/main.py
++++ src/main.py
+@@ -106,7 +106,7 @@
+             print("No accounts found.")
+             return
+ 
+-        print(f"{'Account ID':<38} | {'Type':<15} | {'Balance'}")
++        print(f"XX{'Account ID':<38} | {'Type':<15} | {'Balance'}XX")
+         print("-" * 65)
+         for acc in accounts:
+             print(f"{acc.account_id:<38} | {acc.account_type:<15} | ${acc.balance:.2f}")
+</pre><h3>Mutant 65</h3><pre>--- src/main.py
++++ src/main.py
+@@ -107,7 +107,7 @@
+             return
+ 
+         print(f"{'Account ID':<38} | {'Type':<15} | {'Balance'}")
+-        print("-" * 65)
++        print("XX-XX" * 65)
+         for acc in accounts:
+             print(f"{acc.account_id:<38} | {acc.account_type:<15} | ${acc.balance:.2f}")
+ 
+</pre><h3>Mutant 66</h3><pre>--- src/main.py
++++ src/main.py
+@@ -107,7 +107,7 @@
+             return
+ 
+         print(f"{'Account ID':<38} | {'Type':<15} | {'Balance'}")
+-        print("-" * 65)
++        print("-" / 65)
+         for acc in accounts:
+             print(f"{acc.account_id:<38} | {acc.account_type:<15} | ${acc.balance:.2f}")
+ 
+</pre><h3>Mutant 67</h3><pre>--- src/main.py
++++ src/main.py
+@@ -107,7 +107,7 @@
+             return
+ 
+         print(f"{'Account ID':<38} | {'Type':<15} | {'Balance'}")
+-        print("-" * 65)
++        print("-" * 66)
+         for acc in accounts:
+             print(f"{acc.account_id:<38} | {acc.account_type:<15} | ${acc.balance:.2f}")
+ 
+</pre><h3>Mutant 68</h3><pre>--- src/main.py
++++ src/main.py
+@@ -109,7 +109,7 @@
+         print(f"{'Account ID':<38} | {'Type':<15} | {'Balance'}")
+         print("-" * 65)
+         for acc in accounts:
+-            print(f"{acc.account_id:<38} | {acc.account_type:<15} | ${acc.balance:.2f}")
++            print(f"XX{acc.account_id:<38} | {acc.account_type:<15} | ${acc.balance:.2f}XX")
+ 
+     def do_deposit(self, arg):
+         """Deposit money: deposit <account_id> <amount>"""
+</pre><h3>Mutant 69</h3><pre>--- src/main.py
++++ src/main.py
+@@ -113,7 +113,7 @@
+ 
+     def do_deposit(self, arg):
+         """Deposit money: deposit <account_id> <amount>"""
+-        if not self.auth_service.is_authenticated():
++        if  self.auth_service.is_authenticated():
+             print("Please login first.")
+             return
+         
+</pre><h3>Mutant 70</h3><pre>--- src/main.py
++++ src/main.py
+@@ -114,7 +114,7 @@
+     def do_deposit(self, arg):
+         """Deposit money: deposit <account_id> <amount>"""
+         if not self.auth_service.is_authenticated():
+-            print("Please login first.")
++            print("XXPlease login first.XX")
+             return
+         
+         args = arg.split()
+</pre><h3>Mutant 71</h3><pre>--- src/main.py
++++ src/main.py
+@@ -117,7 +117,7 @@
+             print("Please login first.")
+             return
+         
+-        args = arg.split()
++        args = None
+         if len(args) != 2:
+             print("Usage: deposit <account_id> <amount>")
+             return
+</pre><h3>Mutant 72</h3><pre>--- src/main.py
++++ src/main.py
+@@ -118,7 +118,7 @@
+             return
+         
+         args = arg.split()
+-        if len(args) != 2:
++        if len(args) == 2:
+             print("Usage: deposit <account_id> <amount>")
+             return
+ 
+</pre><h3>Mutant 73</h3><pre>--- src/main.py
++++ src/main.py
+@@ -118,7 +118,7 @@
+             return
+         
+         args = arg.split()
+-        if len(args) != 2:
++        if len(args) != 3:
+             print("Usage: deposit <account_id> <amount>")
+             return
+ 
+</pre><h3>Mutant 74</h3><pre>--- src/main.py
++++ src/main.py
+@@ -119,7 +119,7 @@
+         
+         args = arg.split()
+         if len(args) != 2:
+-            print("Usage: deposit <account_id> <amount>")
++            print("XXUsage: deposit <account_id> <amount>XX")
+             return
+ 
+         try:
+</pre><h3>Mutant 75</h3><pre>--- src/main.py
++++ src/main.py
+@@ -123,7 +123,7 @@
+             return
+ 
+         try:
+-            self.bank_service.deposit(args[0], float(args[1]))
++            self.bank_service.deposit(args[1], float(args[1]))
+             print("Deposit successful.")
+         except ValidationError as e:
+             print(f"Error: {e}")
+</pre><h3>Mutant 76</h3><pre>--- src/main.py
++++ src/main.py
+@@ -123,7 +123,7 @@
+             return
+ 
+         try:
+-            self.bank_service.deposit(args[0], float(args[1]))
++            self.bank_service.deposit(args[0], float(args[2]))
+             print("Deposit successful.")
+         except ValidationError as e:
+             print(f"Error: {e}")
+</pre><h3>Mutant 77</h3><pre>--- src/main.py
++++ src/main.py
+@@ -124,7 +124,7 @@
+ 
+         try:
+             self.bank_service.deposit(args[0], float(args[1]))
+-            print("Deposit successful.")
++            print("XXDeposit successful.XX")
+         except ValidationError as e:
+             print(f"Error: {e}")
+         except ValueError:
+</pre><h3>Mutant 78</h3><pre>--- src/main.py
++++ src/main.py
+@@ -126,7 +126,7 @@
+             self.bank_service.deposit(args[0], float(args[1]))
+             print("Deposit successful.")
+         except ValidationError as e:
+-            print(f"Error: {e}")
++            print(f"XXError: {e}XX")
+         except ValueError:
+             print("Invalid amount.")
+ 
+</pre><h3>Mutant 79</h3><pre>--- src/main.py
++++ src/main.py
+@@ -128,7 +128,7 @@
+         except ValidationError as e:
+             print(f"Error: {e}")
+         except ValueError:
+-            print("Invalid amount.")
++            print("XXInvalid amount.XX")
+ 
+     def do_withdraw(self, arg):
+         """Withdraw money: withdraw <account_id> <amount>"""
+</pre><h3>Mutant 80</h3><pre>--- src/main.py
++++ src/main.py
+@@ -132,7 +132,7 @@
+ 
+     def do_withdraw(self, arg):
+         """Withdraw money: withdraw <account_id> <amount>"""
+-        if not self.auth_service.is_authenticated():
++        if  self.auth_service.is_authenticated():
+             print("Please login first.")
+             return
+         
+</pre><h3>Mutant 81</h3><pre>--- src/main.py
++++ src/main.py
+@@ -133,7 +133,7 @@
+     def do_withdraw(self, arg):
+         """Withdraw money: withdraw <account_id> <amount>"""
+         if not self.auth_service.is_authenticated():
+-            print("Please login first.")
++            print("XXPlease login first.XX")
+             return
+         
+         args = arg.split()
+</pre><h3>Mutant 82</h3><pre>--- src/main.py
++++ src/main.py
+@@ -136,7 +136,7 @@
+             print("Please login first.")
+             return
+         
+-        args = arg.split()
++        args = None
+         if len(args) != 2:
+             print("Usage: withdraw <account_id> <amount>")
+             return
+</pre><h3>Mutant 83</h3><pre>--- src/main.py
++++ src/main.py
+@@ -137,7 +137,7 @@
+             return
+         
+         args = arg.split()
+-        if len(args) != 2:
++        if len(args) == 2:
+             print("Usage: withdraw <account_id> <amount>")
+             return
+ 
+</pre><h3>Mutant 84</h3><pre>--- src/main.py
++++ src/main.py
+@@ -137,7 +137,7 @@
+             return
+         
+         args = arg.split()
+-        if len(args) != 2:
++        if len(args) != 3:
+             print("Usage: withdraw <account_id> <amount>")
+             return
+ 
+</pre><h3>Mutant 85</h3><pre>--- src/main.py
++++ src/main.py
+@@ -138,7 +138,7 @@
+         
+         args = arg.split()
+         if len(args) != 2:
+-            print("Usage: withdraw <account_id> <amount>")
++            print("XXUsage: withdraw <account_id> <amount>XX")
+             return
+ 
+         try:
+</pre><h3>Mutant 86</h3><pre>--- src/main.py
++++ src/main.py
+@@ -142,7 +142,7 @@
+             return
+ 
+         try:
+-            self.bank_service.withdraw(args[0], float(args[1]))
++            self.bank_service.withdraw(args[1], float(args[1]))
+             print("Withdrawal successful.")
+         except ValidationError as e:
+             print(f"Error: {e}")
+</pre><h3>Mutant 87</h3><pre>--- src/main.py
++++ src/main.py
+@@ -142,7 +142,7 @@
+             return
+ 
+         try:
+-            self.bank_service.withdraw(args[0], float(args[1]))
++            self.bank_service.withdraw(args[0], float(args[2]))
+             print("Withdrawal successful.")
+         except ValidationError as e:
+             print(f"Error: {e}")
+</pre><h3>Mutant 88</h3><pre>--- src/main.py
++++ src/main.py
+@@ -143,7 +143,7 @@
+ 
+         try:
+             self.bank_service.withdraw(args[0], float(args[1]))
+-            print("Withdrawal successful.")
++            print("XXWithdrawal successful.XX")
+         except ValidationError as e:
+             print(f"Error: {e}")
+         except ValueError:
+</pre><h3>Mutant 89</h3><pre>--- src/main.py
++++ src/main.py
+@@ -145,7 +145,7 @@
+             self.bank_service.withdraw(args[0], float(args[1]))
+             print("Withdrawal successful.")
+         except ValidationError as e:
+-            print(f"Error: {e}")
++            print(f"XXError: {e}XX")
+         except ValueError:
+             print("Invalid amount.")
+ 
+</pre><h3>Mutant 90</h3><pre>--- src/main.py
++++ src/main.py
+@@ -147,7 +147,7 @@
+         except ValidationError as e:
+             print(f"Error: {e}")
+         except ValueError:
+-            print("Invalid amount.")
++            print("XXInvalid amount.XX")
+ 
+     def do_transfer(self, arg):
+         """Transfer money: transfer <from_acc_id> <to_acc_id> <amount>"""
+</pre><h3>Mutant 91</h3><pre>--- src/main.py
++++ src/main.py
+@@ -151,7 +151,7 @@
+ 
+     def do_transfer(self, arg):
+         """Transfer money: transfer <from_acc_id> <to_acc_id> <amount>"""
+-        if not self.auth_service.is_authenticated():
++        if  self.auth_service.is_authenticated():
+             print("Please login first.")
+             return
+         
+</pre><h3>Mutant 92</h3><pre>--- src/main.py
++++ src/main.py
+@@ -152,7 +152,7 @@
+     def do_transfer(self, arg):
+         """Transfer money: transfer <from_acc_id> <to_acc_id> <amount>"""
+         if not self.auth_service.is_authenticated():
+-            print("Please login first.")
++            print("XXPlease login first.XX")
+             return
+         
+         args = arg.split()
+</pre><h3>Mutant 93</h3><pre>--- src/main.py
++++ src/main.py
+@@ -155,7 +155,7 @@
+             print("Please login first.")
+             return
+         
+-        args = arg.split()
++        args = None
+         if len(args) != 3:
+             print("Usage: transfer <from_id> <to_id> <amount>")
+             return
+</pre><h3>Mutant 94</h3><pre>--- src/main.py
++++ src/main.py
+@@ -156,7 +156,7 @@
+             return
+         
+         args = arg.split()
+-        if len(args) != 3:
++        if len(args) == 3:
+             print("Usage: transfer <from_id> <to_id> <amount>")
+             return
+ 
+</pre><h3>Mutant 95</h3><pre>--- src/main.py
++++ src/main.py
+@@ -156,7 +156,7 @@
+             return
+         
+         args = arg.split()
+-        if len(args) != 3:
++        if len(args) != 4:
+             print("Usage: transfer <from_id> <to_id> <amount>")
+             return
+ 
+</pre><h3>Mutant 96</h3><pre>--- src/main.py
++++ src/main.py
+@@ -157,7 +157,7 @@
+         
+         args = arg.split()
+         if len(args) != 3:
+-            print("Usage: transfer <from_id> <to_id> <amount>")
++            print("XXUsage: transfer <from_id> <to_id> <amount>XX")
+             return
+ 
+         try:
+</pre><h3>Mutant 97</h3><pre>--- src/main.py
++++ src/main.py
+@@ -161,7 +161,7 @@
+             return
+ 
+         try:
+-            self.bank_service.transfer(args[0], args[1], float(args[2]))
++            self.bank_service.transfer(args[1], args[1], float(args[2]))
+             print("Transfer successful.")
+         except ValidationError as e:
+             print(f"Error: {e}")
+</pre><h3>Mutant 98</h3><pre>--- src/main.py
++++ src/main.py
+@@ -161,7 +161,7 @@
+             return
+ 
+         try:
+-            self.bank_service.transfer(args[0], args[1], float(args[2]))
++            self.bank_service.transfer(args[0], args[2], float(args[2]))
+             print("Transfer successful.")
+         except ValidationError as e:
+             print(f"Error: {e}")
+</pre><h3>Mutant 99</h3><pre>--- src/main.py
++++ src/main.py
+@@ -161,7 +161,7 @@
+             return
+ 
+         try:
+-            self.bank_service.transfer(args[0], args[1], float(args[2]))
++            self.bank_service.transfer(args[0], args[1], float(args[3]))
+             print("Transfer successful.")
+         except ValidationError as e:
+             print(f"Error: {e}")
+</pre><h3>Mutant 100</h3><pre>--- src/main.py
++++ src/main.py
+@@ -162,7 +162,7 @@
+ 
+         try:
+             self.bank_service.transfer(args[0], args[1], float(args[2]))
+-            print("Transfer successful.")
++            print("XXTransfer successful.XX")
+         except ValidationError as e:
+             print(f"Error: {e}")
+         except ValueError:
+</pre><h3>Mutant 101</h3><pre>--- src/main.py
++++ src/main.py
+@@ -164,7 +164,7 @@
+             self.bank_service.transfer(args[0], args[1], float(args[2]))
+             print("Transfer successful.")
+         except ValidationError as e:
+-            print(f"Error: {e}")
++            print(f"XXError: {e}XX")
+         except ValueError:
+             print("Invalid amount.")
+ 
+</pre><h3>Mutant 102</h3><pre>--- src/main.py
++++ src/main.py
+@@ -166,7 +166,7 @@
+         except ValidationError as e:
+             print(f"Error: {e}")
+         except ValueError:
+-            print("Invalid amount.")
++            print("XXInvalid amount.XX")
+ 
+     def do_statement(self, arg):
+         """Get account statement: statement <account_id>"""
+</pre><h3>Mutant 103</h3><pre>--- src/main.py
++++ src/main.py
+@@ -170,7 +170,7 @@
+ 
+     def do_statement(self, arg):
+         """Get account statement: statement <account_id>"""
+-        if not self.auth_service.is_authenticated():
++        if  self.auth_service.is_authenticated():
+             print("Please login first.")
+             return
+         
+</pre><h3>Mutant 104</h3><pre>--- src/main.py
++++ src/main.py
+@@ -171,7 +171,7 @@
+     def do_statement(self, arg):
+         """Get account statement: statement <account_id>"""
+         if not self.auth_service.is_authenticated():
+-            print("Please login first.")
++            print("XXPlease login first.XX")
+             return
+         
+         if not arg:
+</pre><h3>Mutant 105</h3><pre>--- src/main.py
++++ src/main.py
+@@ -174,7 +174,7 @@
+             print("Please login first.")
+             return
+         
+-        if not arg:
++        if  arg:
+             print("Usage: statement <account_id>")
+             return
+ 
+</pre><h3>Mutant 106</h3><pre>--- src/main.py
++++ src/main.py
+@@ -175,7 +175,7 @@
+             return
+         
+         if not arg:
+-            print("Usage: statement <account_id>")
++            print("XXUsage: statement <account_id>XX")
+             return
+ 
+         # Verify ownership
+</pre><h3>Mutant 107</h3><pre>--- src/main.py
++++ src/main.py
+@@ -179,7 +179,7 @@
+             return
+ 
+         # Verify ownership
+-        accounts = self.bank_service.get_user_accounts(self.auth_service.current_user.user_id)
++        accounts = None
+         if arg not in [acc.account_id for acc in accounts]:
+             print("Account not found or access denied.")
+             return
+</pre><h3>Mutant 108</h3><pre>--- src/main.py
++++ src/main.py
+@@ -180,7 +180,7 @@
+ 
+         # Verify ownership
+         accounts = self.bank_service.get_user_accounts(self.auth_service.current_user.user_id)
+-        if arg not in [acc.account_id for acc in accounts]:
++        if arg  in [acc.account_id for acc in accounts]:
+             print("Account not found or access denied.")
+             return
+ 
+</pre><h3>Mutant 109</h3><pre>--- src/main.py
++++ src/main.py
+@@ -181,7 +181,7 @@
+         # Verify ownership
+         accounts = self.bank_service.get_user_accounts(self.auth_service.current_user.user_id)
+         if arg not in [acc.account_id for acc in accounts]:
+-            print("Account not found or access denied.")
++            print("XXAccount not found or access denied.XX")
+             return
+ 
+         print(self.report_service.generate_account_statement(arg))
+</pre><h3>Mutant 110</h3><pre>--- src/main.py
++++ src/main.py
+@@ -188,7 +188,7 @@
+ 
+     def do_admin_report(self, arg):
+         """Generate admin report (Admin only)."""
+-        if not self.auth_service.is_authenticated() or not self.auth_service.is_admin():
++        if  self.auth_service.is_authenticated() or not self.auth_service.is_admin():
+             print("Access denied. Admin only.")
+             return
+         
+</pre><h3>Mutant 111</h3><pre>--- src/main.py
++++ src/main.py
+@@ -188,7 +188,7 @@
+ 
+     def do_admin_report(self, arg):
+         """Generate admin report (Admin only)."""
+-        if not self.auth_service.is_authenticated() or not self.auth_service.is_admin():
++        if not self.auth_service.is_authenticated() or  self.auth_service.is_admin():
+             print("Access denied. Admin only.")
+             return
+         
+</pre><h3>Mutant 112</h3><pre>--- src/main.py
++++ src/main.py
+@@ -188,7 +188,7 @@
+ 
+     def do_admin_report(self, arg):
+         """Generate admin report (Admin only)."""
+-        if not self.auth_service.is_authenticated() or not self.auth_service.is_admin():
++        if not self.auth_service.is_authenticated() and not self.auth_service.is_admin():
+             print("Access denied. Admin only.")
+             return
+         
+</pre><h3>Mutant 113</h3><pre>--- src/main.py
++++ src/main.py
+@@ -189,7 +189,7 @@
+     def do_admin_report(self, arg):
+         """Generate admin report (Admin only)."""
+         if not self.auth_service.is_authenticated() or not self.auth_service.is_admin():
+-            print("Access denied. Admin only.")
++            print("XXAccess denied. Admin only.XX")
+             return
+         
+         print(self.report_service.generate_admin_report())
+</pre><h3>Mutant 114</h3><pre>--- src/main.py
++++ src/main.py
+@@ -196,7 +196,7 @@
+ 
+     def do_apply_interest(self, arg):
+         """Apply interest to all savings accounts (Admin only)."""
+-        if not self.auth_service.is_authenticated() or not self.auth_service.is_admin():
++        if  self.auth_service.is_authenticated() or not self.auth_service.is_admin():
+             print("Access denied. Admin only.")
+             return
+         
+</pre><h3>Mutant 115</h3><pre>--- src/main.py
++++ src/main.py
+@@ -196,7 +196,7 @@
+ 
+     def do_apply_interest(self, arg):
+         """Apply interest to all savings accounts (Admin only)."""
+-        if not self.auth_service.is_authenticated() or not self.auth_service.is_admin():
++        if not self.auth_service.is_authenticated() or  self.auth_service.is_admin():
+             print("Access denied. Admin only.")
+             return
+         
+</pre><h3>Mutant 116</h3><pre>--- src/main.py
++++ src/main.py
+@@ -196,7 +196,7 @@
+ 
+     def do_apply_interest(self, arg):
+         """Apply interest to all savings accounts (Admin only)."""
+-        if not self.auth_service.is_authenticated() or not self.auth_service.is_admin():
++        if not self.auth_service.is_authenticated() and not self.auth_service.is_admin():
+             print("Access denied. Admin only.")
+             return
+         
+</pre><h3>Mutant 117</h3><pre>--- src/main.py
++++ src/main.py
+@@ -197,7 +197,7 @@
+     def do_apply_interest(self, arg):
+         """Apply interest to all savings accounts (Admin only)."""
+         if not self.auth_service.is_authenticated() or not self.auth_service.is_admin():
+-            print("Access denied. Admin only.")
++            print("XXAccess denied. Admin only.XX")
+             return
+         
+         count = self.bank_service.calculate_interest()
+</pre><h3>Mutant 118</h3><pre>--- src/main.py
++++ src/main.py
+@@ -200,7 +200,7 @@
+             print("Access denied. Admin only.")
+             return
+         
+-        count = self.bank_service.calculate_interest()
++        count = None
+         print(f"Interest applied to {count} accounts.")
+ 
+     def do_apply_loan(self, arg):
+</pre><h3>Mutant 119</h3><pre>--- src/main.py
++++ src/main.py
+@@ -201,7 +201,7 @@
+             return
+         
+         count = self.bank_service.calculate_interest()
+-        print(f"Interest applied to {count} accounts.")
++        print(f"XXInterest applied to {count} accounts.XX")
+ 
+     def do_apply_loan(self, arg):
+         """Apply for a loan: apply_loan <amount> <term_months>"""
+</pre><h3>Mutant 120</h3><pre>--- src/main.py
++++ src/main.py
+@@ -205,7 +205,7 @@
+ 
+     def do_apply_loan(self, arg):
+         """Apply for a loan: apply_loan <amount> <term_months>"""
+-        if not self.auth_service.is_authenticated():
++        if  self.auth_service.is_authenticated():
+             print("Please login first.")
+             return
+         
+</pre><h3>Mutant 121</h3><pre>--- src/main.py
++++ src/main.py
+@@ -206,7 +206,7 @@
+     def do_apply_loan(self, arg):
+         """Apply for a loan: apply_loan <amount> <term_months>"""
+         if not self.auth_service.is_authenticated():
+-            print("Please login first.")
++            print("XXPlease login first.XX")
+             return
+         
+         args = arg.split()
+</pre><h3>Mutant 122</h3><pre>--- src/main.py
++++ src/main.py
+@@ -209,7 +209,7 @@
+             print("Please login first.")
+             return
+         
+-        args = arg.split()
++        args = None
+         if len(args) != 2:
+             print("Usage: apply_loan <amount> <term_months>")
+             return
+</pre></body></html>

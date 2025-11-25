@@ -1,0 +1,10 @@
+[
+    {
+        "transaction_id": "7b5a5ffa-726f-4bd4-9d3a-6e1e0df1063b",
+        "reasons": [
+            "Large transaction amount"
+        ],
+        "timestamp": "2025-11-24T21:42:33.614421",
+        "status": "REVIEW_NEEDED"
+    }
+]
