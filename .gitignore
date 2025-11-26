@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Testing
+.mutmut-cache
+.pytest_cache/
+.coverage
+html/
+
+# Data & Logs
+data/
+test_data/
+test_data_mutation/
+*.log
+XXdata/
+
+# Environment
+.env
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/

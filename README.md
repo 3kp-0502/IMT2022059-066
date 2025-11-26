@@ -1,66 +1,89 @@
 # Secure Banking System (CLI)
 
 ## Project Overview
-This project is a command-line based Secure Banking System developed for **CSE 731: Software Testing**. It demonstrates a robust banking application with features specifically designed to demonstrate **Mutation Testing**.
+This project is a command-line based Secure Banking System developed for CSE 731: Software Testing. It demonstrates a robust banking application with features suitable for **Mutation Testing**, specifically targeting both **Unit** and **Integration** levels.
 
-## Problem Statement
-**Mutation Testing**: The project focuses on using mutation operators at the statement and integration levels. The goal is to design a test suite that strongly kills generated mutants.
-- **Unit Level**: Arithmetic, Relational, and Assignment mutations.
-- **Integration Level**: Interface mutations between Service and Persistence layers.
+## Features
+- **User Management**: Registration, Login, Role-based access (Admin/Customer).
+- **Account Management**: Savings, Current, and Fixed Deposit accounts.
+- **Transactions**: Deposits, Withdrawals, Transfers with transactional integrity.
+- **Loan System**: Apply for loans, Admin approval/rejection, Repayment.
+- **Fraud Detection**: Automated flagging of suspicious transactions.
+- **Audit Logging**: Comprehensive logging of all user actions for compliance.
+- **Reporting**: Account statements and Admin reports.
+
+## Repository Link
+- **Code Repository**: https://github.com/3kp-0502/IMT2022059-066
 
 ## Team Members
-| Name | Roll Number | Contribution |
-|------|-------------|--------------|
-| PUDI KIRRETI | IMT2022059 | 50% - Core Banking Services, Unit Tests |
-| DHAROORI SRINIVAS ACHARYA | IMT2022066 | 50% - Mutation Strategy, Integration Tests |
+- [DHAROORI SRINIVAS ACHARYA] (IMT2022066)
+- [PUDI KIREETI] (IM2022059)
 
-## Project Stats
-- **Lines of Code (SLOC)**: 1015
-- **Total Lines**: 1262
-- **Language**: Python 3.x
-
-## Tools Used
-- **Test Runner**: `pytest`
-- **Mutation Testing**: `mutmut`
-- **Coverage**: `coverage.py`
-
-## Testing Strategy
-We employed a **Mutation-Driven Testing** strategy. Detailed analysis of operators and strong kill verification is available in [TEST_STRATEGY.md](TEST_STRATEGY.md).
-
-1.  **Initial Suite**: Created standard functional tests for all services.
-2.  **Mutation Analysis**: Ran `mutmut` to identify surviving mutants.
-3.  **Refinement**: Added targeted test cases (e.g., `tests/test_mutation_kills.py`) to kill specific mutants (e.g., default value changes, boundary conditions).
-4.  **Integration Robustness**: Added `tests/test_integration_robustness.py` to verify Service-Persistence interactions (IPR/IVR).
-5.  **Result**: Achieved high mutation score by verifying internal state and default parameter handling.
-
-### Execution Screenshots
-**Passing Test Suite**
-![Passing Tests](pytest_passed.png)
-
-**Mutation Testing Results**
-![Mutmut Results](mutmut_results.png)
+## AI Acknowledgement
+This project was developed with the assistance of Google's AI tools for:
+- README structuring.
+- Unit test desing and Mutation testing strategy planning.
 
 ## Setup and Usage
-1.  Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-2.  Run the application:
-    ```bash
-    python src/main.py
-    ```
-3.  Run Tests:
-    ```bash
-    python -m pytest
-    ```
-4.  Run Mutation Testing:
-    ```bash
-    mutmut run
-    mutmut results
-    ```
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Run the application:
+   ```bash
+   python src/main.py
+   ```
+
+## Testing Strategy
+We employ a comprehensive **Mutation Testing** strategy to ensure the robustness of our test suite.
+**Detailed Strategy**: See [TEST_STRATEGY.md](TEST_STRATEGY.md) for a full breakdown of mutation operators and our "Strong Kill" approach.
+
+### Key Highlights
+- **Unit Level**: Verified Arithmetic (AOR), Relational (ROR), and Assignment (ASR) operators.
+- **Integration Level**: Verified Parameter Replacement (IPR), Method Call Deletion (IMCD), and Return Value Replacement (IVR) using `tests/test_integration_robustness.py`.
+- **Tool**: `mutmut`
+
+### Mutation Testing Results
+- **Initial Run**: Found surviving mutants in `src/models/account.py`.
+- **Example Fix 1**: Mutant #200 (Default Value Change) - Killed by `tests/test_mutation_kills.py`.
+- **Example Fix 2**: Mutant #700 (Balance Initialization) - Killed by `tests/test_mutation_kills.py`.
+- **Integration Fix**: Added `tests/test_integration_robustness.py` to kill mutants that modify service-persistence interactions.
+
+### Test Execution
+To reproduce the testing results:
+1. **Run Unit & Integration Tests**:
+   ```bash
+   python -m pytest
+   ```
+2. **Run Mutation Tests**:
+   ```bash
+   mutmut run
+   ```
+3. **View Report**:
+   Open `html/index.html` in a browser.
+
+## Testing Tools Used
+- **pytest**: For automated unit and integration testing.
+- **mutmut**: For mutation testing (Python).
+- **coverage**: For code coverage analysis.
+- **unittest.mock**: For verifying integration interactions.
+
+## Test Evidence
+- **Screenshots**:
+  
+  **1. Unit Tests Passing**
+  ![Unit Tests](screenshots/Screenshot%202025-11-26%20193339.png)
+
+  **2. Mutation Testing Results**
+  ![Mutation Results](screenshots/Screenshot%202025-11-26%20193355.png)
+
+  **3. Killed Mutant Example**
+  ![Mutant Killed](screenshots/Screenshot%202025-11-26%20193546.png)
+
+- **HTML Report**: See `html/index.html` for the detailed mutation report.
 
 ## Directory Structure
-- `src/`: Source code (Models, Services, Utils).
-- `tests/`: Test suite (Functional and Mutation-specific tests).
+- `src/`: Source code.
+- `tests/`: Test suite (Unit and Integration).
 - `data/`: JSON persistence files.
-
+- `html/`: Mutation testing HTML report.
