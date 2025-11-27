@@ -97,9 +97,9 @@ class FixedDepositAccount(Account):
     maturity_date: datetime = field(init=False)
 
     def __post_init__(self):
-        # If created_at is already set (e.g. during deserialization), use it
-        # Otherwise it's now.
-        self.maturity_date = None
+        if not hasattr(self, 'maturity_date') or self.maturity_date is None:
+            # Simplified maturity calculation: 30 days per month
+            self.maturity_date = self.created_at + timedelta(days=30 * self.term_months)
 
     def can_withdraw(self, amount: float) -> bool:
         # Cannot withdraw before maturity (simplified logic)
