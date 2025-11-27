@@ -16,8 +16,8 @@ This project is a command-line based Secure Banking System developed for CSE 731
 - **Code Repository**: https://github.com/3kp-0502/IMT2022059-066
 
 ## Team Members
-- [DHAROORI SRINIVAS ACHARYA] (IMT2022066)
-- [PUDI KIREETI] (IM2022059)
+- DHAROORI SRINIVAS ACHARYA IMT2022066
+- PUDI KIREETI IM2022059
 
 ## AI Acknowledgement
 This project was developed with the assistance of Google's AI tools for:
