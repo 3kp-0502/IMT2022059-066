@@ -50,7 +50,7 @@ We employ a comprehensive **Mutation Testing** strategy to ensure the robustness
 - **Example Fix 2**: Mutant #700 (Balance Initialization) - Killed by `tests/test_mutation_kills.py`.
 - **Integration Fix**: Added `tests/test_integration_robustness.py` to kill mutants that modify service-persistence interactions.
 - **Comprehensive Testing**: Added `tests/test_comprehensive.py` to target boundary conditions and state transitions, aiming for >70% mutation score.
-- **Current Score**: Killed 240 out of 464 mutants (51.6%).
+- **Current Score**: Killed 271 out of 464 mutants (60%).
 
 ### Test Execution
 To reproduce the testing results:
