@@ -1,0 +1,12 @@
+{
+    "bdca35b3-fb34-4187-b59a-729961f2c068": {
+        "account_id": "bdca35b3-fb34-4187-b59a-729961f2c068",
+        "user_id": "2d206099-1df7-4786-94ba-ab646880dc45",
+        "balance": 1000.0,
+        "created_at": "2025-11-27T21:55:41.968577",
+        "is_active": true,
+        "account_type": "FIXED_DEPOSIT",
+        "term_months": 24,
+        "maturity_date": "2027-11-17T21:55:41.968577"
+    }
+}

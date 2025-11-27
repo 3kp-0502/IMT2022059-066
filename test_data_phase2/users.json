@@ -1,0 +1,14 @@
+{
+    "2d206099-1df7-4786-94ba-ab646880dc45": {
+        "user_id": "2d206099-1df7-4786-94ba-ab646880dc45",
+        "username": "user_fd_cust",
+        "password_hash": "08fa299aecc0c034e037033e3b0bbfaef26b78c742f16cf88ac3194502d6c394",
+        "email": "u3@test.com",
+        "phone": "1234567890",
+        "is_admin": false,
+        "created_at": "2025-11-27T21:55:41.967569",
+        "accounts": [
+            "bdca35b3-fb34-4187-b59a-729961f2c068"
+        ]
+    }
+}

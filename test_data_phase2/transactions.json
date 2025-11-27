@@ -1,0 +1,11 @@
+[
+    {
+        "transaction_id": "5c3ea66e-7959-437e-94c6-e16cc3f30acb",
+        "account_id": "bdca35b3-fb34-4187-b59a-729961f2c068",
+        "amount": 1000.0,
+        "transaction_type": "DEPOSIT",
+        "timestamp": "2025-11-27T21:55:41.968577",
+        "description": "Initial Deposit",
+        "related_account_id": null
+    }
+]

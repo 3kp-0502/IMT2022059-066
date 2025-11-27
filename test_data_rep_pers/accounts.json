@@ -1,0 +1,17 @@
+{
+    "a1": {
+        "account_id": "a1",
+        "user_id": "u1",
+        "balance": 100.0
+    },
+    "a2": {
+        "account_id": "a2",
+        "user_id": "u2",
+        "balance": 200.0
+    },
+    "a3": {
+        "account_id": "a3",
+        "user_id": "u2",
+        "balance": 300.0
+    }
+}
